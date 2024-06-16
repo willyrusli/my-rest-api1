@@ -150,6 +150,58 @@
                 ],
                 "summary": "Display a listing of items",
                 "operationId": "index",
+                "parameters": [
+                    {
+                        "name": "_page",
+                        "in": "query",
+                        "description": "current page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": 1
+                        }
+                    },
+                    {
+                        "name": "_limit",
+                        "in": "query",
+                        "description": "max item in a page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": 10
+                        }
+                    },
+                    {
+                        "name": "_search",
+                        "in": "query",
+                        "description": "word to search",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "_skincare seller",
+                        "in": "query",
+                        "description": "search by skincare seller like name",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "_sort_by",
+                        "in": "query",
+                        "description": "word to search",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "latest"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful",
@@ -176,12 +228,12 @@
                                 "$ref": "#/components/schemas/Skincare"
                             },
                             "example": {
-                                "nama": "Cetaphil Gentle Skin Cleanser",
-                                "brand": "Cetaphil",
-                                "category": "Cleanser (Pembersih Wajah)",
+                                "name": "Cetaphil Gentle Skin Cleanser",
+                                "brand": "Cepaphil",
+                                "category": "Cleanser (pembersih wajah)",
                                 "price": "150000",
                                 "stock": "1000",
-                                "description": "Cetaphil Gentle Skin Cleanser adalah pembersih wajah yang diformulasikan untuk kulit sensitif..",
+                                "description": "Ceptaphil Gentle Skin Cleanser adalah pembersih wajah yang diformulasikan untuk kulit sensitif.",
                                 "image": "https://tse4.mm.bing.net/th?id=OIP.4lndUWsMx42RQGJSicHXKAHaHa&pid=Api&P=0&h=180"
                             }
                         }
@@ -286,11 +338,11 @@
                                 "$ref": "#/components/schemas/Skincare"
                             },
                             "example": {
-                                "nama": "Kiehl's Ultra Facial Cream",
+                                "name": "Kiehl's Ultra Facial Cream",
                                 "brand": "Kiehl's",
-                                "category": "Moisturizer (Pelembap)",
+                                "category": "Moisturizer(pelembap)",
                                 "price": "200000",
-                                "stock": "1500",
+                                "stock": "1000",
                                 "description": "Pelembap yang memberikan hidrasi 24 jam dengan tekstur ringan dan cepat meresap.",
                                 "image": "https://feelunique.com/cdn-cgi/image/quality=75,format=auto,metadata=none,dpr=1/img/products/61024/alternative/Kiehl__039_s_Ultra_Facial_Cream_50ml_1_1523698750.jpg"
                             }
